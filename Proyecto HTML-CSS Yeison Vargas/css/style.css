@@ -1,0 +1,832 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #7FBF9F;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #5FAF87;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #e2f3ec;
+    color: #4a8b69;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-sm:hover {
+    background-color: #7FBF9F;
+    color: white;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES (HEADER, LOGO & FOOTER)
+   ========================================================================== */
+header {
+    background-color: #7FBF9F;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+header h1.logo {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    padding: 8px 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+header nav a:hover, 
+header nav a.active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+footer.footer {
+    background-color: #222222;
+    color: #b0b0b0;
+    padding: 30px 0;
+    border-top: 3px solid #7FBF9F;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-brand h3 {
+    color: #7FBF9F;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+}
+
+.footer-contact {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .header-contenido {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 15px 0;
+        gap: 15px;
+    }
+    .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-contact {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1.logo {
+        font-size: 1.2rem; 
+    }
+    .logo-img {
+        height: 70px;
+    }
+}
+
+/* ==========================================================================
+   PÁGINA DE INICIO (BANNER, CARRUSEL, DESTACADOS, MISIÓN Y VISIÓN)
+   ========================================================================== */
+#banner {
+    height: 60vh;
+    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("../img/mascotas.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    min-height: 105vh;
+    width: 100%;
+}
+
+.banner-info h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.banner-info p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+.carrusel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carrusel-container {
+    display: flex;
+    width: 300%;
+    animation: cambiarFoto 12s infinite ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    position: relative;
+    height: 450px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 30px 20px 15px 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+@keyframes cambiarFoto {
+    0%, 25% { transform: translateX(0); }
+    33%, 58% { transform: translateX(-33.33%); }
+    66%, 91% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0); }
+}
+
+.grid-destacados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-destacada {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid #7FBF9F;
+    transition: transform 0.3s;
+}
+
+.card-destacada:hover {
+    transform: translateY(-5px);
+}
+
+.card-destacada h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.card-destacada p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.grid-mision-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.grid-mision-vision .bloque-mv:first-child {
+    grid-column: 1 / -1;
+    background-color: #f0f7f4;
+    border-top: 5px solid #7FBF9F;
+    padding: 40px;
+}   
+
+.bloque-mv {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.mv-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.mv-header .icon {
+    font-size: 1.8rem;
+}
+
+.mv-header h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    color: #2c3e50;
+}
+
+.bloque-mv p {
+    color: #555;
+    text-align: justify;
+}
+
+@media (max-width: 900px) {
+    .grid-destacados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-destacados {
+        grid-template-columns: 1fr;
+    }
+    .grid-mision-vision {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ==========================================================================
+   PÁGINA ADÓPTANOS (CATÁLOGO DE MASCOTAS)
+   ========================================================================== */
+.section-filtros {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.filtros .btn-sm.active {
+    background-color: #7FBF9F;
+    color: white;
+}
+
+.grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card-animal {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.card-animal:hover {
+    transform: translateY(-5px);
+}
+
+.card-animal img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-animal-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-animal-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.card-animal-info p {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.card-animal-info .descripcion {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.badge.disponible {
+    background-color: #2ecc71;
+}
+
+.badge.adoptado {
+    background-color: #e74c3c;
+}
+
+.card-animal.adoptado img {
+    filter: grayscale(40%);
+}
+
+.card-animal.adoptado .btn {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .grid-catalogo {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-catalogo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   PÁGINA CONÓCENOS Y CONTACTO (FORMULARIO E INFO)
+   ========================================================================== */
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.info-contacto {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.info-contacto h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.contacto-directo {
+    margin: 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.contacto-directo p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.formulario-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #7FBF9F;
+    box-shadow: 0 0 5px rgba(127, 191, 159, 0.3);
+}
+
+.mensaje-error {
+    display: none;
+    color: #e74c3c !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.form-group input:not(:placeholder-shown):invalid {
+    border-color: #e74c3c !important;
+    background-color: #fdf3f2;
+}
+
+.form-group input:not(:placeholder-shown):valid {
+    border-color: #2ecc71 !important;
+    background-color: #f0fff4;
+}
+
+.form-group input:not(:placeholder-shown):invalid + .mensaje-error {
+    display: block !important;
+}
+
+.form-group input:valid + .mensaje-error {
+    display: none !important;
+}
+
+.form-group input:placeholder-shown + .mensaje-error {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    .grid-contacto {
+        grid-template-columns: 1fr;
+    }
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   PÁGINA GALERÍA (TARJETAS DE LABORES)
+   ========================================================================== */
+.container-galeria {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.card-labor {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+    align-items: center;
+}
+
+.card-labor:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-labor img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (min-width: 1024px) {
+    .container-galeria {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (min-width: 768px) {
+    .container-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*===================================================*/
+
+.bg-impacto {
+    background-color: #ffffff; 
+    color: #000000;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+
+.grid-cifras {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.cifra-item {
+    background-color: #7FBF9F; 
+    padding: 30px 20px;
+    border-radius: 12px;
+    border-bottom: 4px solid #7FBF9F;
+    transition: transform 0.3s ease;
+    text-align: center;
+    
+}
+
+.cifra-item:hover {
+    transform: translateY(-5px);
+
+}
+
+
+.cifra-item .numero {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+
+.cifra-item .cifra-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+
+.cifra-item .footnote {
+    font-size: 0.8rem;
+    color: #ffffff;
+    display: block;
+    font-style: italic;
+}
+
+
+.contenedor-graficas {
+    background-color:#F0F9F4;
+    padding: 35px;
+    border-radius: 15px;
+    max-width: 750px;
+    margin: 0 auto 50px auto;
+    text-align: left;
+}
+
+.grafica-titulo {
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.barra-progreso {
+    margin-bottom: 20px;
+}
+
+.etiqueta-barra {
+    font-size: 0.95rem;
+    color: #000000;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.base-barra {
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.1);
+    height: 22px;
+    border-radius: 11px;
+    overflow: hidden;
+}
+
+.llenado-barra {
+    background-color: #7FBF9F;
+    height: 100%;
+    border-radius: 11px;
+
+    animation: cargaExamen 1.5s ease-out forwards;
+}
+
+
+.barra-adopcion {
+    width: 89%;
+}
+
+
+.barra-voluntarios {
+    width: 70%;
+}
+
+
+.barra-medica {
+    width: 100%;
+}
+
+@keyframes cargaExamen {
+    from { width: 0%; }
+}
+
+
+.narrativa-bloque {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.narrativa-bloque p {
+    font-size: 1.05rem;
+    color: #000000;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: justify;
+    align-items: center;
+    width: 100%;
+}
+
+
+.btn {
+    background-color: #7FBF9F;
+    color: #ffffff !important;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #5FAF87;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+    .grid-cifras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .grid-cifras {
+        grid-template-columns:  repeat(1,1fr); 
+        gap: 15px;
+    }
+    .cifra-item .numero {
+        font-size: 2.6rem; 
+    }
+    .contenedor-graficas {
+        padding: 20px; 
+    }
+}

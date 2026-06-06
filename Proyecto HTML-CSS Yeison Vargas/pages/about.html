@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Patitas Felices | Contactanos</title>
+</head>
+<body>
+
+    <header>
+        <div class="container header-contenido">
+            <div class="logo-container">
+                <img src="../img/logo.png" alt="Logo" class="logo-img">          
+                    <h1 class="logo" >Patitas Felices</h1>
+            </div>        
+            <nav>
+                <a href="../index.html" >Inicio</a>
+                <a href="../pages/adopt us.html">Adóptanos</a>
+                <a href="../pages/gallery.html">Conócenos</a>
+                <a href="../pages/about.html" class="active">Contactanos</a>
+                <a href="../pages/impacto.html">Impacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section text-center bg-light">
+            <div class="container">
+                <h2 class="section-title">Hablemos 📩</h2>
+                <p>¿Quieres adoptar, donar o simplemente decirnos lo guapos que son nuestros perros? Escríbenos.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container grid-contacto">
+                
+                <div class="info-contacto">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Patitas Felices nació en 2019 cuando un grupo de locos decidió que ningún animal debía dormir en la calle. Hoy somos una gran familia.</p>
+                    
+                    <div class="contacto-directo">
+                        <p><strong>📍 Sede:</strong>Calle 9 Avenida 67 Barrio The Bronx-CúcutaYork</p>
+                        <p><strong>📞 Teléfono:</strong> +57 315 012 5818</p> 
+                        <p><strong>✉️ Correo:</strong> yeisonvargas927@gmail.com</p>
+                    </div>
+
+                    <div class="redes-sociales">
+                        <a href="https://www.facebook.com/profile.php?id=100092467047692" class="btn-sm">Facebook</a>
+                        <a href="https://www.instagram.com/yeisonvargas927/" class="btn-sm">Instagram</a>
+                        <a href="https://x.com/YeisonVargas09" class="btn-sm">X</a>
+                    </div>
+                </div>
+
+                <div class="formulario-wrapper">
+                    <form action="#" class="formulario">
+                        
+                        <div class="form-group success">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" id="nombre" placeholder="Ej. Juan" required >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos *</label>
+                            <input type="text" id="apellidos" placeholder="Ej. Pérez" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad *</label>
+                            <input type="text" id="ciudad" placeholder="Ej. Bogotá" required>
+                        </div>
+
+                        <div class="form-group error">
+                            <label for="correo">Correo Electrónico *</label>
+                            <input type="email" id="correo" placeholder="ejemplo@gmail.com" required pattern=".+@gmail\.com">
+                            <span class="mensaje-error">Por favor, ingresa un correo válido de @gmail.com</span>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" placeholder="Ej. 3000000000" required pattern="[0-9]+">
+                            <span class="mensaje-error">Solo se permiten números.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motivo">Motivo de contacto *</label>
+                            <select id="motivo" required>
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="adopcion">Adopción</option>
+                                <option value="donacion">Donación</option>
+                                <option value="voluntariado">Voluntariado</option>
+                                <option value="info">Información General</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-full">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" rows="4" placeholder="Cuéntanos más..." required></textarea>
+                        </div>
+
+                        <div class="form-group form-full">
+                            <button type="button" class="btn">Enviar Mensaje</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-contenido">
+            <div class="footer-brand">
+                <h3>Patitas Felices</h3>
+                <p>© 2026 Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Contacto:</strong> yeisonvargas927@gmail.com</p>
+                <p>Desarrollado con ❤️ para los peludos</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
